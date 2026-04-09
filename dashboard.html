@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Dashboard</h1>
+
+    <a href="/">Back to Home</a>
+
+    <hr>
+
+    {% for attempt in attempts %}
+        <div style="margin-bottom: 20px;">
+            <h3>{{ attempt["scenario_title"] }}</h3>
+
+            <p><strong>Score:</strong> {{ attempt["overall_score"] }}</p>
+
+            <p><strong>Your Response:</strong></p>
+            <p>{{ attempt["user_response"] }}</p>
+
+            <p><strong>Strengths:</strong></p>
+            <p>{{ attempt["strengths"] }}</p>
+
+            <p><strong>Improvements:</strong></p>
+            <p>{{ attempt["improvements"] }}</p>
+
+            <p><strong>Suggested Reply:</strong></p>
+            <p>{{ attempt["suggested_reply"] }}</p>
+
+            <hr>
+        </div>
+    {% endfor %}
+
+</body>
+</html>

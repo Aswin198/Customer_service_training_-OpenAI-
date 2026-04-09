@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluation Result</title>
+</head>
+<body>
+    <h1>Evaluation Result</h1>
+
+    <h2>{{ scenario.title }}</h2>
+
+    <p><strong>Your Response:</strong></p>
+    <p>{{ user_response }}</p>
+
+    <p><strong>Overall Score:</strong> {{ feedback.overall_score }}</p>
+
+    <h3>Strengths</h3>
+    <ul>
+        {% for item in feedback.strengths %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Improvements</h3>
+    <ul>
+        {% for item in feedback.improvements %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Suggested Better Reply</h3>
+    <p>{{ feedback.suggested_reply }}</p>
+
+    <a href="/scenario/{{ scenario.id }}">Try Again</a>
+    <a href="/">Back Home</a>
+</body>
+</html>
